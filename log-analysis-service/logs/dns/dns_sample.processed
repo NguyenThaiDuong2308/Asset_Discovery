@@ -1,0 +1,10 @@
+Jun 05 00:12:15 dns-server named[1234]: client 192.168.1.100#54321 (webserver.local): query: webserver.local IN A +E(0)K (192.168.1.2)
+Jun 05 00:12:15 dns-server named[1234]: client 192.168.1.100#54321 (dbserver.local): query: dbserver.local IN A +E(0)K (192.168.1.2)
+Jun 05 00:12:16 dns-server named[1234]: client 192.168.1.2#53: response: webserver.local IN A 192.168.1.10
+Jun 05 00:12:16 dns-server named[1234]: client 192.168.1.2#53: response: dbserver.local IN A 192.168.1.11
+Jun 05 00:12:30 dns-server named[1234]: client 192.168.1.101#62534 (fileserver.local): query: fileserver.local IN A +E(0)K (192.168.1.2)
+Jun 05 00:12:31 dns-server named[1234]: client 192.168.1.2#53: response: fileserver.local IN A 192.168.1.12
+Jun 05 00:12:45 dns-server named[1234]: client 192.168.1.102#38765 (www.example.com): query: www.example.com IN A +E(0)K (192.168.1.2)
+Jun 05 00:12:46 dns-server named[1234]: client 192.168.1.2#53: response: www.example.com IN A 93.184.216.34
+Jun 05 00:13:05 dns-server named[1234]: client 192.168.1.100#55678 (workstation2.local): query: workstation2.local IN A +E(0)K (192.168.1.2)
+Jun 05 00:13:06 dns-server named[1234]: client 192.168.1.2#53: response: workstation2.local IN A 192.168.1.101

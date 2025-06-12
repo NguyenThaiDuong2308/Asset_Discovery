@@ -1,0 +1,71 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: asset-discovery-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+          - postgres_data:/var/lib/postgresql/data
+          - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      asset_net:
+
+  log-analysis-service:
+    build:
+      context: ../log-analysis-service
+      dockerfile: ../log-analysis-service/Dockerfile
+    container_name: log-analysis-service
+    volumes:
+      - ../log-analysis-service/logs:/app/logs
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=log_analysis
+      - API_PORT=8080
+      - LOG_BASE_DIR=/app/logs
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      asset_net:
+
+  asset-management-service:
+    build:
+      context: ../asset-management-service
+      dockerfile: Dockerfile
+    container_name: asset-management-service
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=asset_management
+      - API_PORT=8081
+    ports:
+      - "8081:8081"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      asset_net:
+
+volumes:
+  postgres_data:
+networks:
+  asset_net:

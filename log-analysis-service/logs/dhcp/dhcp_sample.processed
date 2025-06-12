@@ -1,0 +1,10 @@
+Jun 05 00:10:15 dhcp-server dhcpd: DHCPACK on 192.168.1.100 to 00:1A:2B:3C:4D:5E (workstation1) via eth0
+Jun 05 00:10:18 dhcp-server dhcpd: DHCPACK on 192.168.1.101 to 00:2A:3B:4C:5D:6E (workstation2) via eth0
+Jun 05 00:10:22 dhcp-server dhcpd: DHCPACK on 192.168.1.102 to 00:3A:4B:5C:6D:7E (workstation3) via eth0
+Jun 05 00:10:25 dhcp-server dhcpd: DHCPACK on 192.168.1.10 to AA:BB:CC:DD:EE:FF (webserver) via eth0
+Jun 05 00:10:28 dhcp-server dhcpd: DHCPACK on 192.168.1.11 to AA:BB:CC:DD:EE:AA (dbserver) via eth0
+Jun 05 00:10:31 dhcp-server dhcpd: DHCPACK on 192.168.1.12 to AA:BB:CC:DD:EE:BB (fileserver) via eth0
+Jun 05 00:10:35 dhcp-server dhcpd: DHCPREQUEST for 192.168.1.100 from 00:1A:2B:3C:4D:5E via eth0
+Jun 05 00:10:35 dhcp-server dhcpd: DHCPACK on 192.168.1.100 to 00:1A:2B:3C:4D:5E (workstation1) via eth0
+Jun 05 00:11:05 dhcp-server dhcpd: DHCPREQUEST for 192.168.1.101 from 00:2A:3B:4C:5D:6E via eth0
+Jun 05 00:11:05 dhcp-server dhcpd: DHCPACK on 192.168.1.101 to 00:2A:3B:4C:5D:6E (workstation2) via eth0

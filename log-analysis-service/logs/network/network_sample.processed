@@ -1,0 +1,7 @@
+Jun 05 00:15:05 switch1 kernel: Interface GigabitEthernet1/0/1 MAC 00:1A:2B:3C:4D:5E IP 192.168.1.100 VLAN 10
+Jun 05 00:15:06 switch1 kernel: Interface GigabitEthernet1/0/2 MAC 00:2A:3B:4C:5D:6E IP 192.168.1.101 VLAN 10
+Jun 05 00:15:07 switch1 kernel: Interface GigabitEthernet1/0/3 MAC 00:3A:4B:5C:6D:7E IP 192.168.1.102 VLAN 10
+Jun 05 00:15:08 switch1 kernel: Interface GigabitEthernet1/0/10 MAC AA:BB:CC:DD:EE:FF IP 192.168.1.10 VLAN 20
+Jun 05 00:15:09 switch1 kernel: Interface GigabitEthernet1/0/11 MAC AA:BB:CC:DD:EE:AA IP 192.168.1.11 VLAN 20
+Jun 05 00:15:10 switch1 kernel: Interface GigabitEthernet1/0/12 MAC AA:BB:CC:DD:EE:BB IP 192.168.1.12 VLAN 20
+Jun 05 00:15:11 switch1 kernel: Interface GigabitEthernet1/0/24 MAC FF:EE:DD:CC:BB:AA IP 192.168.1.1 VLAN 1
