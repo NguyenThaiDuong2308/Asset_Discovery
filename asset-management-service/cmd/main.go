@@ -11,7 +11,6 @@ import (
 	"github.com/joho/godotenv"
 	"log"
 	"os"
-	"time"
 )
 
 func main() {
@@ -51,15 +50,13 @@ func main() {
 		api.PATCH("assets/:ip/services/:service_id/manage", handler.ManageService)
 	}
 	go func() {
-		for {
-			err := service.SyncFromLogService(context.Background(), repo)
-			if err != nil {
-				log.Fatal(err)
-			} else {
-				log.Println("sync complete")
-			}
-			time.Sleep(30 * time.Second)
+		err := service.SyncFromLogService(context.Background(), repo)
+		if err != nil {
+			log.Fatal(err)
+		} else {
+			log.Println("sync complete")
 		}
+
 	}()
 	port := os.Getenv("PORT")
 	if port == "" {

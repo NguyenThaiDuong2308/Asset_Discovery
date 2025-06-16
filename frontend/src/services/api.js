@@ -16,6 +16,9 @@ export const fetchApi = async (url, options = {}) => {
         const error = await response.json();
         throw new Error(error.error || 'Something went wrong');
     }
+    if (response.status === 204) {
+        return null; // Không có nội dung trả về
+    }
 
     return response.json();
 };

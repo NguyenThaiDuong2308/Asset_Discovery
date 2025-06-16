@@ -7,6 +7,7 @@ import AssetForm from './components/assets/AssetForm';
 import ServiceList from './components/services/ServiceList';
 import ServiceForm from './components/services/ServiceForm';
 import LogList from './components/logs/LogList';
+import Dashboard from './components/dashboard/dashboard';
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<AssetList />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/assets" element={<AssetList />} />
             <Route path="/assets/new" element={<AssetForm />} />
             <Route path="/assets/:ip" element={<AssetDetail />} />
@@ -29,4 +31,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 

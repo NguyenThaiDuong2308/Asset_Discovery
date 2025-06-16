@@ -7,6 +7,11 @@ const Sidebar = () => {
             <nav>
                 <ul>
                     <li>
+                        <NavLink to="/dashboard" className={({ isActive }) => isActive ? 'active' : ''}>
+                            Dashboard
+                        </NavLink>
+                    </li>
+                    <li>
                         <NavLink to="/assets" className={({ isActive }) => isActive ? 'active' : ''}>
                             Assets
                         </NavLink>

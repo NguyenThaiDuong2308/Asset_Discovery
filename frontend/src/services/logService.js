@@ -6,21 +6,21 @@ export const getLogs = async () => {
 };
 
 // Get assets from log service
-export const getLogServiceAssets = async () => {
+export const getLogAnalysisAssets = async () => {
     return fetchApi(`${LOG_SERVICE_URL}/api/assets`);
 };
 
 // Get services from log service
-export const getLogServiceServices = async () => {
+export const getLogAnalysisServices = async () => {
     return fetchApi(`${LOG_SERVICE_URL}/api/services`);
 };
 
 // Get services for a specific IP from log service
-export const getLogServiceAssetServices = async (ip) => {
+export const getLogAnalysisServicesByIp = async (ip) => {
     return fetchApi(`${LOG_SERVICE_URL}/api/services/${ip}`);
 };
 
 // Get specific asset details from log service
-export const getLogServiceAssetDetails = async (ip) => {
+export const getLogServiceAssetByIp = async (ip) => {
     return fetchApi(`${LOG_SERVICE_URL}/api/assets/${ip}`);
 };

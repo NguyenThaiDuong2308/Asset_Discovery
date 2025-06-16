@@ -10,10 +10,10 @@ const LogList = () => {
         const fetchLogs = async () => {
             try {
                 const data = await getLogs();
-                setLogs(data.logs);
-                setLoading(false);
+                setLogs(data?.logs || []); // fallback nếu logs null
             } catch (err) {
-                setError('Failed to fetch logs');
+                setError('Không thể lấy danh sách logs');
+            } finally {
                 setLoading(false);
             }
         };
@@ -21,7 +21,7 @@ const LogList = () => {
         fetchLogs();
     }, []);
 
-    if (loading) return <div className="loader">Loading...</div>;
+    if (loading) return <div className="loader">Đang tải log...</div>;
     if (error) return <div className="error-message">{error}</div>;
 
     return (
@@ -29,17 +29,17 @@ const LogList = () => {
             <h1>System Logs</h1>
 
             {logs.length === 0 ? (
-                <p>No logs found.</p>
+                <p>Không có log nào được tìm thấy.</p>
             ) : (
                 <table className="log-table">
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Time</th>
-                        <th>Type</th>
-                        <th>Action</th>
-                        <th>Source IP</th>
-                        <th>Destination IP</th>
+                        <th>Thời gian</th>
+                        <th>Loại</th>
+                        <th>Hành động</th>
+                        <th>IP nguồn</th>
+                        <th>IP đích</th>
                     </tr>
                     </thead>
                     <tbody>

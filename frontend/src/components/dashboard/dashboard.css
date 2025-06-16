@@ -1,0 +1,254 @@
+.dashboard-container {
+    padding: 16px;
+    background-color: #f5f6fa;
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.search-bar {
+    display: flex;
+    margin-bottom: 16px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-input-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0 10px;
+    flex: 1;
+    margin-right: 16px;
+}
+
+.search-icon {
+    margin-right: 8px;
+}
+
+.search-input {
+    border: none;
+    padding: 10px 0;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+}
+
+.filter-dropdown {
+    margin-right: 8px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Changed from 4 to 3 columns */
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.stat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.stat-header h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.refresh-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-count {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.stat-count.blue { color: #2196f3; }
+.stat-count.green { color: #4caf50; }
+.stat-count.red { color: #f44336; }
+
+.stat-description {
+    font-size: 12px;
+    color: #777;
+}
+
+.assets-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-btn {
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-btn.active {
+    border-bottom-color: #2196f3;
+    color: #2196f3;
+}
+
+.assets-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 16px;
+}
+
+.asset-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.asset-card:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.asset-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.asset-icon-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+.asset-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    flex: 1;
+}
+
+.asset-status {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.asset-status.managed {
+    background-color: #e8f5e9;
+    color: #4caf50;
+}
+
+.asset-status.unmanaged {
+    background-color: #ffebee;
+    color: #f44336;
+}
+
+.asset-details {
+    padding: 16px;
+}
+
+.detail-row {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.detail-label {
+    width: 80px;
+    color: #777;
+    font-size: 14px;
+}
+
+.detail-value {
+    font-size: 14px;
+}
+
+.loading-container {
+    padding: 32px;
+    text-align: center;
+    color: #777;
+}
+
+.no-results {
+    padding: 32px;
+    text-align: center;
+    color: #777;
+    grid-column: 1 / -1;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+@media (max-width: 1200px) {
+    .assets-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .assets-list {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
